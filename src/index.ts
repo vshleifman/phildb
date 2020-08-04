@@ -7,7 +7,7 @@ import { periodData } from "./periodData";
 import { Period } from "./entity/Period";
 import { Book } from "./entity/Book";
 import * as express from "express";
-const cors = require("cors");
+import * as cors from "cors";
 
 createConnection()
   .then(async (connection) => {
@@ -91,7 +91,7 @@ createConnection()
     };
 
     // createPeriodTable();
-    createPhiloTable();
+    // createPhiloTable();
     // createBookTable();
     console.log("db ready");
   })

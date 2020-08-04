@@ -21,6 +21,7 @@
   "scripts": {
     "start": "if test \"$NODE_ENV\" = \"production\"; then npm run start:prod; else npm run start:dev; fi",
     "start:dev": "ts-node-dev --respawn src/index.ts",
-    "start:prod": "tsc && node dist/index"
+    "start:prod": "tsc && node dist/index",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
   }
 }
