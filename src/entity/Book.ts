@@ -12,6 +12,12 @@ export class Book {
   @Column()
   author: string;
 
+  @Column()
+  editor: string;
+
+  @Column()
+  date: string;
+
   @ManyToOne((type) => Philosopher)
   @JoinColumn({ name: "PhilosopherId" })
   philosopherId: number;

@@ -1,9 +1,10 @@
 {
+  "name": "default",
   "type": "mysql",
-  "host": "localhost",
+  "host": "db_service",
   "port": 3306,
   "username": "root",
-  "password": "Aspirinepass199^",
+  "password": "password",
   "database": "philDB",
   "synchronize": false,
   "logging": false,

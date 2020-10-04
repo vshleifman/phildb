@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  db_service:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: "philDB"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      - "mysql_data:/var/lib/mysql"
+
+  backend-service:
+    stdin_open: true
+    build: .
+    tty: true
+    volumes:
+      - "/app/node_modules"
+      - "./:/app"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    labels:
+      traefik.http.routers.rbp_backend.rule: Host(`${DOMAIN}`) && PathPrefix(`/api`)
+      traefik.http.routers.rbp_backend.middlewares: api-stripprefix
+      traefik.http.middlewares.api-stripprefix.stripprefix.prefixes: /api
+      traefik.http.routers.rbp_backend.entrypoints: websecure
+      traefik.http.routers.rbp_backend.tls.certresolver: cfdnsresolver
+      traefik.http.routers.rbp_backend.tls.domains[0].main: ${DOMAIN}
+      traefik.http.routers.rbp_backend.tls.domains[0].sans: www.${DOMAIN}
+    ports: 
+      - 3001
+    depends_on:
+      - db_service
+
+volumes:
+  mysql_data: {}
+networks:
+  default:
+    external: 
+      name: traefik
+     

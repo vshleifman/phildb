@@ -6,7 +6,6 @@ import {
   JoinColumn,
 } from "typeorm";
 import { Period } from "./Period";
-import { Movement } from "./Movement";
 import { PeriodEnum } from "../philosophersData";
 
 @Entity()
