@@ -1,16 +1,22 @@
 {
   "name": "default",
   "type": "mysql",
-  "host": "db_service",
+  "host": "192.168.1.164",
   "port": 3306,
-  "username": "root",
-  "password": "password",
+  "username": "my-app-user",
+  "password": "my-app-password",
   "database": "philDB",
   "synchronize": false,
   "logging": false,
-  "entities": ["src/entity/**/*.ts"],
-  "migrations": ["src/migration/**/*.ts"],
-  "subscribers": ["src/subscriber/**/*.ts"],
+  "entities": [
+    "src/entity/**/*.ts"
+  ],
+  "migrations": [
+    "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+    "src/subscriber/**/*.ts"
+  ],
   "cli": {
     "entitiesDir": "src/entity",
     "migrationsDir": "src/migration",
