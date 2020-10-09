@@ -13,7 +13,6 @@ createConnection()
     const periodRep = connection.getRepository(Period);
 
     const app = express();
-    app.use('*', async (req, res, next) => { console.log(req); next() })
     app.use(express.json());
     // app.use(periodRoutes);
     app.use(cors());

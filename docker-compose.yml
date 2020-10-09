@@ -18,8 +18,6 @@ services:
     volumes:
       - "/app/node_modules"
       - "./:/app"
-    environment:
-      - CHOKIDAR_USEPOLLING=true
     labels:
       traefik.http.routers.rbp_backend.rule: Host(`${DOMAIN}`) && PathPrefix(`/api`)
       traefik.http.routers.rbp_backend.middlewares: api-stripprefix
