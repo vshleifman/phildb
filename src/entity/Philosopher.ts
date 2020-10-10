@@ -11,41 +11,41 @@ import { PeriodEnum } from "../philosophersData";
 @Entity()
 export class Philosopher {
   @PrimaryGeneratedColumn()
-  philosopherId: number;
+  philosopherId!: number;
 
   @Column()
-  fname: string;
+  fname!: string;
 
   @Column()
-  lname: string;
+  lname!: string;
 
   @Column()
-  topname: string;
+  topname!: string;
 
   @Column()
-  nation: string;
+  nation!: string;
 
   @Column()
-  dates: string;
+  dates!: string;
 
   @Column()
-  image_url: string;
+  image_url!: string;
 
   @Column()
-  image_desc: string;
+  image_desc!: string;
 
   @Column("varchar", { length: 1000 })
-  text_intro: string;
+  text_intro!: string;
 
   @Column("text")
-  text_life: string;
+  text_life!: string;
 
   @Column("text")
-  text_work: string;
+  text_work!: string;
 
   @ManyToOne((type) => Period)
   @JoinColumn({ name: "PeriodId" })
-  period_id: number;
+  period_id!: number;
 
   // @ManyToOne((type) => Movement)
   // @JoinColumn()

@@ -10,4 +10,4 @@ RUN npm i
 
 COPY . .
 
-CMD /wait-for db_service:3306 -- npm run start:dev
+CMD /wait-for db_service:3306 -- npm start

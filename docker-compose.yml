@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 services:
   db_service:
     image: mysql:5.7
@@ -17,7 +17,7 @@ services:
     tty: true
     volumes:
       - "/app/node_modules"
-      - "./:/app"
+      - "./src:/app/src"
     labels:
       traefik.http.routers.rbp_backend.rule: Host(`${DOMAIN}`) && PathPrefix(`/api`)
       traefik.http.routers.rbp_backend.middlewares: api-stripprefix
@@ -26,7 +26,7 @@ services:
       traefik.http.routers.rbp_backend.tls.certresolver: cfdnsresolver
       traefik.http.routers.rbp_backend.tls.domains[0].main: ${DOMAIN}
       traefik.http.routers.rbp_backend.tls.domains[0].sans: www.${DOMAIN}
-    ports: 
+    ports:
       - 3001
     depends_on:
       - db_service
@@ -35,6 +35,5 @@ volumes:
   mysql_data: {}
 networks:
   default:
-    external: 
+    external:
       name: traefik
-     
