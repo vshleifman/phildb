@@ -26,7 +26,7 @@ services:
       traefik.http.routers.rbp_backend.tls.certresolver: cfdnsresolver
       traefik.http.routers.rbp_backend.tls.domains[0].main: ${DOMAIN}
       traefik.http.routers.rbp_backend.tls.domains[0].sans: www.${DOMAIN}
-    ports:
+    expose:
       - 3001
     depends_on:
       - db_service
