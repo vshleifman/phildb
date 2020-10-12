@@ -1,7 +1,6 @@
-version: "3.8"
-services: 
+version: "3"
+services:
   backend-service:
-    build: 
-      context: .
-      dockerfile: Dockerfile.prod
+    environment:
+      NODE_ENV: production
     volumes: []

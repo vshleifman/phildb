@@ -2,8 +2,8 @@ import "reflect-metadata";
 import { createConnection, QueryBuilder } from "typeorm";
 import { Philosopher } from "./entity/Philosopher";
 import { Period } from "./entity/Period";
-import * as express from "express";
-import * as cors from "cors";
+import express from "express";
+import cors from "cors";
 import periodRoutes from "./routes/periodRoutes";
 import { resolve } from "path";
 

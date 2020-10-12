@@ -4,21 +4,21 @@ import { Philosopher } from "./Philosopher";
 @Entity()
 export class Book {
   @PrimaryColumn()
-  title: string;
+  title!: string;
 
   @Column()
-  link: string;
+  link!: string;
 
   @Column()
-  author: string;
+  author!: string;
 
   @Column()
-  editor: string;
+  editor!: string;
 
   @Column()
-  date: string;
+  date!: string;
 
   @ManyToOne((type) => Philosopher)
   @JoinColumn({ name: "PhilosopherId" })
-  philosopherId: number;
+  philosopherId!: number;
 }
