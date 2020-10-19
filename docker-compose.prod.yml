@@ -3,4 +3,3 @@ services:
   backend-service:
     environment:
       NODE_ENV: production
-    volumes: []

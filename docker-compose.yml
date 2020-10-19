@@ -15,9 +15,6 @@ services:
     stdin_open: true
     build: .
     tty: true
-    volumes:
-      - "/app/node_modules"
-      - "./src:/app/src"
     labels:
       traefik.http.routers.rbp_backend.rule: Host(`${DOMAIN}`) && PathPrefix(`/api`)
       traefik.http.routers.rbp_backend.middlewares: api-stripprefix
@@ -30,7 +27,6 @@ services:
       - 3001
     depends_on:
       - db_service
-
 volumes:
   mysql_data: {}
 networks:
