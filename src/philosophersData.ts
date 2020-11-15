@@ -1015,7 +1015,7 @@ export const philosophers: PhilType[] = [
   },
   {
     lname: "Ockham",
-    fname: "OccamWilliam of",
+    fname: "William of",
     topname: "",
     dates: "c. 1285 - 1348",
     period_id: 5,
