@@ -1,7 +1,5 @@
-# Awesome Project Build with TypeORM
+Practice Project for understanding multiple React and SQL technologies
 
-Steps to run this project:
-
-1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+Run with docker-compose:
+DEV: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+PROD: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
